@@ -90,7 +90,7 @@
             // lblGold
             // 
             this.lblGold.AutoSize = true;
-            this.lblGold.BackColor = System.Drawing.Color.Tan;
+            this.lblGold.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblGold.Location = new System.Drawing.Point(49, 21);
             this.lblGold.Name = "lblGold";
             this.lblGold.Size = new System.Drawing.Size(71, 13);
@@ -115,7 +115,7 @@
             // lblClickDamage
             // 
             this.lblClickDamage.AutoSize = true;
-            this.lblClickDamage.BackColor = System.Drawing.Color.Tan;
+            this.lblClickDamage.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblClickDamage.Location = new System.Drawing.Point(49, 45);
             this.lblClickDamage.Name = "lblClickDamage";
             this.lblClickDamage.Size = new System.Drawing.Size(88, 13);
@@ -158,7 +158,7 @@
             // lblLvl
             // 
             this.lblLvl.AutoSize = true;
-            this.lblLvl.BackColor = System.Drawing.Color.Tan;
+            this.lblLvl.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblLvl.Location = new System.Drawing.Point(49, 71);
             this.lblLvl.Name = "lblLvl";
             this.lblLvl.Size = new System.Drawing.Size(35, 13);
@@ -198,7 +198,7 @@
             // lblDamagePerSec
             // 
             this.lblDamagePerSec.AutoSize = true;
-            this.lblDamagePerSec.BackColor = System.Drawing.Color.Tan;
+            this.lblDamagePerSec.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblDamagePerSec.Location = new System.Drawing.Point(171, 45);
             this.lblDamagePerSec.Name = "lblDamagePerSec";
             this.lblDamagePerSec.Size = new System.Drawing.Size(35, 13);
@@ -227,7 +227,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ClickerHeroesOOP.Properties.Resources.wood;
+            this.pictureBox1.BackColor = System.Drawing.Color.Gold;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 78);
