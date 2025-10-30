@@ -14,6 +14,7 @@ namespace ClickerHeroesOOP
     {
         private int level = 1;
         private int monstersKilled = 0;
+        private bool handlingDeath = false;
         Player hrac = new Player();
         Monster currentMonster = new Monster();
         Random rnd = new Random();
@@ -35,20 +36,34 @@ namespace ClickerHeroesOOP
             UpdateUI();
             timer1.Start();
         }
-        public Monster SpawnMonster(int level) 
+        public Monster SpawnMonster(int level)
         {
-            int type = rnd.Next(0, 8);
-            switch (type)
+            // Každé 10. monstrum bude boss
+            if ((monstersKilled + 1) % 10 == 0) // +1 protože ještě nebylo přičteno
             {
-                case 0: return new Slime(level);
-                case 1: return new Goblin(level);
-                case 2: return new Tarantula(level);
-                case 3: return new Beetle(level);
-                case 4: return new Cactus(level);
-                case 5: return new Rat(level);
-                case 6: return new Scorpion(level);
-                case 7: return new JackOLantern(level);
-                default: return new Slime(level);
+                // Náhodně vyber bosse: Dragon nebo Lich
+                int bossType = rnd.Next(0, 2); // 0 = Dragon, 1 = Lich
+                if (bossType == 0)
+                    return new Dragon(level);
+                else
+                    return new Lich(level);
+            }
+            else
+            {
+                // Běžná monstra
+                int type = rnd.Next(0, 8);
+                switch (type)
+                {
+                    case 0: return new Slime(level);
+                    case 1: return new Goblin(level);
+                    case 2: return new Tarantula(level);
+                    case 3: return new Beetle(level);
+                    case 4: return new Cactus(level);
+                    case 5: return new Rat(level);
+                    case 6: return new Scorpion(level);
+                    case 7: return new JackOLantern(level);
+                    default: return new Slime(level);
+                }
             }
         }
 
@@ -64,23 +79,48 @@ namespace ClickerHeroesOOP
             lblLvl.Text = $"Level: {level}";
             btnBuyPassiveDamage.Text = $"LVL UP\n{hrac.PassiveUpgradeCost}";
             lblDamagePerSec.Text = $"DPS: {hrac.PassiveDamage*10}";
+
+            //Nastavení obrázku podle aktuálního mosntra
+            if (currentMonster is Slime)
+                btnAttack.BackgroundImage = Properties.Resources.Slime;
+            else if (currentMonster is Goblin)
+                btnAttack.BackgroundImage = Properties.Resources.Goblin;
+            else if (currentMonster is Tarantula)
+                btnAttack.BackgroundImage = Properties.Resources.Tarantula;
+            else if (currentMonster is Beetle)
+                btnAttack.BackgroundImage = Properties.Resources.Beetle;
+            else if (currentMonster is Cactus)
+                btnAttack.BackgroundImage = Properties.Resources.Cactus;
+            else if (currentMonster is Rat)
+                btnAttack.BackgroundImage = Properties.Resources.Rat;
+            else if (currentMonster is Scorpion)
+                btnAttack.BackgroundImage = Properties.Resources.Scorpion;
+            else if (currentMonster is JackOLantern)
+                btnAttack.BackgroundImage = Properties.Resources.Pumpkin;
+            else if (currentMonster is Dragon)
+                btnAttack.BackgroundImage = Properties.Resources.Dragon;
+            else if (currentMonster is Lich)
+                btnAttack.BackgroundImage = Properties.Resources.Lich;
+
+            btnAttack.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-        //aby se nestalo, že kliknu na tlačítko a zároveň zemře monstrum pasivně a duplikuju drops, používám handle,ten volám po každé smrti monstra
+        // volám po každé smrti monstra
         private void HandleMonsterDeath()
         {
+            if (handlingDeath) return; // už se zpracovává smrt
+            handlingDeath = true;
             hrac.AddGold(currentMonster.RewardGold);
-            monstersKilled++;
-            // každých 10 monster level up
-            if (monstersKilled > 0)
+            monstersKilled++; //zvyšuje počet zabitých monster
+            // Level-up každých 10 monster, nezávisle na typu
+            if (monstersKilled > 0 && monstersKilled % 10 == 0)
             {
-                if (monstersKilled % 10 == 0)
-                {
-                    level++;
-                    MessageBox.Show($"Level up! Teď jsi na levelu {level}");
-                }
+                level++;
+                MessageBox.Show($"Level up! Teď jsi na levelu {level}");
             }
+            // Spawn nového monstra
             currentMonster = SpawnMonster(level);
+            handlingDeath = false;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

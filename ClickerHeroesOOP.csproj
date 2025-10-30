@@ -59,18 +59,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -79,6 +80,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Snímek obrazovky 2025-05-05 231439.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pumpkin-hurt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pumpkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cactus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cactus-hurt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lich.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scorpion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beetle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tarantula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Goblin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wood.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joystick_game_3819.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

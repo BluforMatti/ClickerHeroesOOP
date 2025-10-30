@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnAttack = new System.Windows.Forms.Button();
             this.monsterName = new System.Windows.Forms.Label();
             this.monsterHPbar = new System.Windows.Forms.ProgressBar();
@@ -47,9 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttack
@@ -66,9 +65,9 @@
             this.monsterName.AutoSize = true;
             this.monsterName.Location = new System.Drawing.Point(544, 360);
             this.monsterName.Name = "monsterName";
-            this.monsterName.Size = new System.Drawing.Size(62, 13);
+            this.monsterName.Size = new System.Drawing.Size(24, 13);
             this.monsterName.TabIndex = 1;
-            this.monsterName.Text = "placeholder";
+            this.monsterName.Text = "text";
             // 
             // monsterHPbar
             // 
@@ -80,6 +79,8 @@
             // monsterHPlabel
             // 
             this.monsterHPlabel.AutoSize = true;
+            this.monsterHPlabel.BackColor = System.Drawing.Color.White;
+            this.monsterHPlabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.monsterHPlabel.Location = new System.Drawing.Point(557, 382);
             this.monsterHPlabel.Name = "monsterHPlabel";
             this.monsterHPlabel.Size = new System.Drawing.Size(35, 13);
@@ -89,6 +90,7 @@
             // lblGold
             // 
             this.lblGold.AutoSize = true;
+            this.lblGold.BackColor = System.Drawing.Color.Tan;
             this.lblGold.Location = new System.Drawing.Point(49, 21);
             this.lblGold.Name = "lblGold";
             this.lblGold.Size = new System.Drawing.Size(71, 13);
@@ -97,17 +99,23 @@
             // 
             // btnBuyDamage
             // 
+            this.btnBuyDamage.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuyDamage.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBuyDamage.FlatAppearance.BorderSize = 5;
+            this.btnBuyDamage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuyDamage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuyDamage.Location = new System.Drawing.Point(44, 176);
             this.btnBuyDamage.Name = "btnBuyDamage";
             this.btnBuyDamage.Size = new System.Drawing.Size(150, 51);
             this.btnBuyDamage.TabIndex = 5;
             this.btnBuyDamage.Text = "LVL UP";
-            this.btnBuyDamage.UseVisualStyleBackColor = true;
+            this.btnBuyDamage.UseVisualStyleBackColor = false;
             this.btnBuyDamage.Click += new System.EventHandler(this.btnBuyDamage_Click);
             // 
             // lblClickDamage
             // 
             this.lblClickDamage.AutoSize = true;
+            this.lblClickDamage.BackColor = System.Drawing.Color.Tan;
             this.lblClickDamage.Location = new System.Drawing.Point(49, 45);
             this.lblClickDamage.Name = "lblClickDamage";
             this.lblClickDamage.Size = new System.Drawing.Size(88, 13);
@@ -150,6 +158,7 @@
             // lblLvl
             // 
             this.lblLvl.AutoSize = true;
+            this.lblLvl.BackColor = System.Drawing.Color.Tan;
             this.lblLvl.Location = new System.Drawing.Point(49, 71);
             this.lblLvl.Name = "lblLvl";
             this.lblLvl.Size = new System.Drawing.Size(35, 13);
@@ -173,17 +182,23 @@
             // 
             // btnBuyPassiveDamage
             // 
+            this.btnBuyPassiveDamage.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuyPassiveDamage.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBuyPassiveDamage.FlatAppearance.BorderSize = 5;
+            this.btnBuyPassiveDamage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuyPassiveDamage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuyPassiveDamage.Location = new System.Drawing.Point(44, 258);
             this.btnBuyPassiveDamage.Name = "btnBuyPassiveDamage";
             this.btnBuyPassiveDamage.Size = new System.Drawing.Size(150, 51);
             this.btnBuyPassiveDamage.TabIndex = 12;
             this.btnBuyPassiveDamage.Text = "LVL UP";
-            this.btnBuyPassiveDamage.UseVisualStyleBackColor = true;
+            this.btnBuyPassiveDamage.UseVisualStyleBackColor = false;
             this.btnBuyPassiveDamage.Click += new System.EventHandler(this.btnBuyPassiveDamage_Click);
             // 
             // lblDamagePerSec
             // 
             this.lblDamagePerSec.AutoSize = true;
+            this.lblDamagePerSec.BackColor = System.Drawing.Color.Tan;
             this.lblDamagePerSec.Location = new System.Drawing.Point(171, 45);
             this.lblDamagePerSec.Name = "lblDamagePerSec";
             this.lblDamagePerSec.Size = new System.Drawing.Size(35, 13);
@@ -193,6 +208,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Tan;
             this.label1.Location = new System.Drawing.Point(41, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
@@ -202,6 +218,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Tan;
             this.label2.Location = new System.Drawing.Point(41, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
@@ -210,24 +227,18 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::ClickerHeroesOOP.Properties.Resources.wood;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 78);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(36, 110);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(172, 234);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -246,12 +257,11 @@
             this.Controls.Add(this.monsterName);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "OOP DU";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,7 +287,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
